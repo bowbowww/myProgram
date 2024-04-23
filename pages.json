@@ -18,6 +18,31 @@
 		{
 		}
 	}],
+	"subPackages": [
+		{
+			"root": "subpkg",
+			"pages": [
+			{
+				"path" : "signinInfo/signinInfo",
+				"style" : 
+				{
+					"navigationBarTitleText" : "签到信息",
+					"enablePullDownRefresh" : false
+				}
+			},
+			{
+				"path" : "guide/guide",
+				"style" : 
+				{
+					"navigationBarTitleText" : "签到信息使用指南",
+					"enablePullDownRefresh" : false
+				}
+			}
+				
+			]
+		}
+	],
+	
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "位置签到",
