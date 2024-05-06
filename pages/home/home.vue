@@ -1,7 +1,6 @@
 <template>
 	<view class="container">
 		<view class="head">
-			
 			<navigator class="jump" url="/subpkg/signinInfo/signinInfo">
 				<view class="left">
 					<image src="/static/headPortrait.png" alt class="head-portrait" />
@@ -23,145 +22,106 @@
 		</navigator>
 
 		<view class="function">
-			<view class="sign-list">
+			<view class="{{isSignActive ? 'sign-active-class' : 'sign-list'}}" @click="showed1()">
 				<image class="sign-list-img" src="../../static/项目云盘.png" mode=""></image>
 				<p class="description">签到列表</p>
 			</view>
-			<view class="name-list">
-				<image class="name-list-img" src="../../static/项目云盘.png" mode=""></image>
+			<view class="{{isNameActive ? 'name-active-class' : 'name-list'}}" @click="showed2()">
+				<image class="name-list-img" src="../../static/人员名单.png" mode=""></image>
 				<p class="description">签到名单</p>
 			</view>
 		</view>
+
+		<scroll-view scroll-y="true" class="function-realization">
+			<!-- 签到列表功能 -->
+			<view class="sign-list-container" v-if="signShow">
+				<view class="unit">
+					<image src="../../static/签到.png" mode=""></image>
+					<view class="text">
+						<p class="title">标题</p>
+						<p class="position">位置</p>
+						<ul class="info">
+							<li class="li1">我</li>
+							<li class="li">total</li>
+							<li class="li">distance</li>
+							<li class="li2">time</li>
+						</ul>
+					</view>
+				</view>
+			</view>
+			<!-- 签到名单功能 -->
+			<view class="name-list-container" v-if="nameShow">
+				<image src="../../static/添加active.png" mode="" class="add-img" @click="showAdd()"></image>
+				<view class="text">
+					<view class="left">
+						<p class="description">共0份名单</p>
+						<image src="@/static/提示.png" class="tip-img" mode=""></image>
+					</view>
+					<view class="right">
+						<p class="description" @click="toManage()" v-if="isManage">管理</p>
+						<view class="manage" v-else>
+							<p class="description1" @click="toManage()">取消</p>
+							<p class="description2">确定删除</p>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
 		
+		<!-- 添加名单的弹窗显示 -->
+		<view class="add-name-list" v-if="addShow">
+			<view class="create-name-list" @click="createList">
+				<p class="description">创建空白名单</p>
+			</view>
+			<view class="putIn">
+				<p class="description">从签到记录导入</p>
+			</view>
+			<view class="exit" @click="closeAdd()">
+				<p class="description">取消</p>
+			</view>
+		</view>
 	</view>
 </template>
 
 <script setup>
-
+	import {
+		ref
+	} from 'vue'
+	
+	let isSignActive = ref(false)
+	let isNameActive = ref(false)
+	let signShow = ref(false)
+	let nameShow = ref(false)
+	let addShow = ref(false)
+	let isManage = ref(true)
+	const showed1 = () => {
+		isSignActive.value = true;
+		isNameActive.value = false;
+		signShow.value = true;
+		nameShow.value = false;
+	}
+	const showed2 = () => {
+		isSignActive.value = false;
+		isNameActive.value = true;
+		signShow.value = false;
+		nameShow.value = true;
+	}
+	const showAdd = ()=>{
+		addShow.value = true
+	}
+	const closeAdd = ()=>{
+		addShow.value = false
+	}
+	const toManage = ()=> {
+		isManage.value = !isManage.value
+	}
+	const createList = ()=> {
+		uni.navigateTo({
+			url:'/subpkg/createList/createList'
+		})
+	}
 </script>
 
 <style scoped lang="scss">
-	.container {
-		width: 100%;
-		
-// 头像部分
-		.head {
-			box-sizing: border-box;
-			padding: 20rpx;
-			padding-bottom: 0;
-			height: 100rpx;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-
-			.left:hover {
-				cursor: pointer;
-			}
-
-			.left {
-				width: 650rpx;
-				height: 100%;
-				display: flex;
-				justify-content: flex-start;
-				align-items: center;
-
-				.head-portrait {
-					width: 80rpx;
-					height: 80rpx;
-					border-radius: 50%;
-				}
-
-				.name {
-					padding: 10rpx;
-				}
-
-				.change {
-					width: 30rpx;
-					height: 30rpx;
-				}
-			}
-
-			.right {
-				width: 60rpx;
-				height: 60rpx;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				.saoma {
-					width: 50rpx;
-					height: 50rpx;
-				}
-			}
-		}
-		
-// 功能推荐部分
-		.jump:hover {
-			cursor: pointer;
-		}
-
-		.recommand {
-			width: 100%;
-			height: 72rpx;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 25rpx;
-			
-			.description {
-				color: #888888;
-			}
-			.height-light {
-				color: red;
-			}
-		}
-		
-// 功能列表
-		.function {
-			width: 100%;
-			height: 76rpx;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			background-color: yellow;
-			
-			.name-list {
-				width: 50%;
-				height: 80rpx;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				
-				.name-list-img {
-					width: 54rpx;
-					height: 54rpx;
-					padding-right: 30rpx;
-				}
-				
-				.description {
-					color: #888888;
-					font-size: 27rpx;
-				}
-			}
-			
-			.sign-list {
-				width: 50%;
-				height: 80rpx;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				
-				.sign-list-img {
-					width: 54rpx;
-					height: 54rpx;
-					padding-right: 30rpx;
-				}
-				
-				.description {
-					color: #888888;
-					font-size: 27rpx;
-				}
-			}
-		}
-	}
+	@import './home.scss'
 </style>

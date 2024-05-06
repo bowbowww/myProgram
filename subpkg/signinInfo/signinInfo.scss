@@ -1,0 +1,103 @@
+.container {
+		box-sizing: border-box;
+		padding-left: 72rpx;
+		padding-right: 72rpx;
+		padding-top: 30rpx;
+		width: 100%;
+		height: 100vh;
+// 顶部提示
+		.tip {
+			width: 100%;
+			height: 120rpx;
+
+			.description {
+				font-size: 27rpx;
+				color: #8a8a8a;
+			}
+		}
+// 头像部分
+		.change-portrait {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			padding-bottom: 45rpx;
+			border-bottom: 1rpx solid #e6e6e6;
+
+			.head-portrait {
+				margin-bottom: 5rpx;
+				border-radius: 50%;
+				width: 120rpx;
+				height: 120rpx;
+			}
+
+			.description {
+				font-size: 23rpx;
+				color: #8a8a8a;
+			}
+		}
+//信息部分
+		.info-content {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+
+			.unit {
+				width: 100%;
+				height: 90rpx;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				border-bottom: 3rpx solid #e6e6e6;
+				
+				.user-id {
+					width: 33%;
+					display: flex;
+					justify-content: flex-end;
+					font-size: 27rpx;
+					color: #398bfb;
+				}
+			
+				.info-name {
+					width: 33%;
+				}
+
+				.info {
+					width: 33%;
+				}
+			}
+		}
+		
+		.add-info {
+			width: 100%;
+			padding-top: 36rpx;
+			padding-bottom: 100rpx;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			
+			.add-img {
+				width: 60rpx;
+				height: 60rpx;
+				padding-right: 20rpx;
+			}
+			
+			.description {
+				color: #888888;
+			}
+		}
+		
+		.save-container {
+			width: 100%;
+			height: 80rpx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.save-button {
+				width: 470rpx;
+				background-color: #398bfb;
+				color: white;
+			}
+		}
+	}

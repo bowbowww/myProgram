@@ -1,0 +1,317 @@
+	.container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		height: 100vh;
+		flex-direction: column;
+		
+// 添加名单的弹窗显示
+		.add-name-list {
+			border-radius: 40rpx;
+			width: 90%;
+			height: 30%;
+			position: fixed;
+			z-index: 1;
+			display: flex;
+			top: 30%;
+			left: 5%;
+			flex-direction: column;
+      box-shadow:16rpx 16rpx 16rpx rgba(0, 0, 0, .1);
+			border: 1rpx solid #e6e6e6;
+			background-color: #f7f7f7;
+			
+			.create-name-list {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+			border-top-left-radius: 40rpx;
+			border-top-right-radius: 40rpx;
+				width: 100%;
+				height: 130rpx;
+			background-color: white;
+			border-bottom: 3rpx solid #e6e6e6;
+			}
+			.putIn {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				width: 100%;
+				height: 130rpx;
+			background-color: white;
+			}
+			.exit{
+				margin-top: 20rpx;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				width: 100%;
+				height: 130rpx;
+			background-color: white;
+				border-bottom-left-radius: 40rpx;
+				border-bottom-right-radius: 40rpx;
+			}
+		}
+		
+// 头像部分
+		.head {
+			box-sizing: border-box;
+			padding: 20rpx;
+			padding-bottom: 0;
+			height: 100rpx;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.left:hover {
+				cursor: pointer;
+			}
+
+			.left {
+				width: 650rpx;
+				height: 100%;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+
+				.head-portrait {
+					width: 80rpx;
+					height: 80rpx;
+					border-radius: 50%;
+				}
+
+				.name {
+					padding: 10rpx;
+				}
+
+				.change {
+					width: 30rpx;
+					height: 30rpx;
+				}
+			}
+
+			.right {
+				width: 60rpx;
+				height: 60rpx;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.saoma {
+					width: 50rpx;
+					height: 50rpx;
+				}
+			}
+		}
+		
+// 功能推荐部分
+		.jump:hover {
+			cursor: pointer;
+		}
+
+		.recommand {
+			width: 100%;
+			height: 72rpx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 25rpx;
+			
+			.description {
+				color: #888888;
+			}
+			.height-light {
+				color: red;
+			}
+		}
+		
+// 功能列表
+		.function {
+			width: 100%;
+			height: 76rpx;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			.name-list {
+				width: 50%;
+				height: 80rpx;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+				.name-list-img {
+					width: 54rpx;
+					height: 54rpx;
+					padding-right: 30rpx;
+				}
+				
+				.description {
+					color: #888888;
+					font-size: 27rpx;
+				}
+			}
+			
+			.sign-list {
+				width: 50%;
+				height: 80rpx;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+				.sign-list-img {
+					width: 54rpx;
+					height: 54rpx;
+					padding-right: 30rpx;
+				}
+				
+				.description {
+					color: #888888;
+					font-size: 27rpx;
+				}
+			}
+			
+			.sign-active-class {
+				width: 50%;
+				height: 80rpx;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #e6e6e6;
+			}
+			
+			.name-active-class {
+				width: 50%;
+				height: 80rpx;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #e6e6e6;
+			}
+			
+		}
+		
+		.function-realization {
+			width:100%;
+			flex: 1;
+			position: relative;
+			
+			.sign-list-container {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				
+				.unit {
+					width: 100%;
+					height: 144rpx;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					list-style: none;
+					background-color: white;
+					
+					image {
+						display: flex;
+						width: 54rpx;
+						height: 54rpx;
+						margin: 36rpx;
+					}
+					
+					.text {
+						display: flex;
+						flex-direction: column;
+						flex: 1;
+						
+						.title {
+							font-size: 28rpx;
+						}
+						
+						.position {
+							color: #888888;
+							font-size: 22rpx;
+						}
+						
+						.info {
+							display: flex;
+							align-items: center;
+							font-size: 22rpx;
+							color: #888888;
+							
+							.li1 {
+									 padding-right: 20rpx;
+								 border-right: 3rpx solid #e6e6e6;
+							}
+							.li {
+								 padding-right: 20rpx;
+								 padding-left: 20rpx;
+								 border-right: 3rpx solid #e6e6e6;
+							 }
+							 .li2 {
+								 padding-right: 20rpx;
+								 padding-left: 20rpx;
+							 }
+						}
+					}
+				}
+			}
+			
+			.name-list-container {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				display: flex;
+				
+				.add-img {
+					position: fixed;
+					top: 85%;
+					left: 80%;
+					width: 100rpx; 
+					height: 100rpx;
+				}
+				
+				.text {
+					width: 100%;
+					height: 80rpx;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 20rpx 30rpx;
+					
+					.left {
+						display: flex;
+						width: 50%;
+						align-items: center;
+						.description {
+						font-size: 28rpx;
+					}
+					.tip-img {
+						width: 28rpx;
+						height: 28rpx;
+						padding-left: 10rpx;
+					}
+					}
+				
+					
+					.right {
+						width: 30%;
+						display: flex;
+						justify-content: flex-end;
+						
+						.description {
+						font-size: 30rpx;
+						color: #888888;
+					}
+					
+					.manage {
+						display: flex;
+						font-size: 30rpx;
+						color: #888888;
+						
+						.description1{
+							padding-right: 20rpx;
+						}
+					}
+					}
+				}
+			}
+		}
+	}

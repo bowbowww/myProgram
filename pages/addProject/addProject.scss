@@ -1,0 +1,118 @@
+.container {
+		width: 100%;
+		//  顶部的输入框
+		.top {
+			width: 100%;
+			min-height: 480rpx;
+			background-color: white;
+			display: flex;
+			flex-direction: column;
+
+			.sign-name {
+				margin-top: 20rpx;
+				margin-left: 40rpx;
+				margin-right: 40rpx;
+				padding-bottom: 20rpx;
+				border-bottom: 3rpx solid #f7f7f7;
+			}
+			
+			.sign-content {
+				box-sizing: border-box;
+				width: 100%;
+				height: 200rpx;
+				padding-top: 20rpx;
+				padding-left: 40rpx;
+				padding-right: 40rpx;
+				border-bottom: 3rpx solid #f7f7f7;
+			}
+		}
+		// 时间选择器
+		.time-container {
+			box-sizing: border-box;
+			width: 100%;
+			height: 90rpx;
+			padding-left: 40rpx;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 3rpx solid #f7f7f7;
+			
+			.time-img {
+				width: 40rpx;
+				height: 40rpx;
+			}
+			
+			.time {
+				box-sizing: border-box;
+				padding-left: 80rpx;
+				padding-right: 80rpx;
+				display: flex;
+				justify-content: space-between;
+				color: #888888;
+				font-size: 28rpx;
+				
+				.picker {
+					padding: 0 5rpx;
+				}
+				
+				.minus {
+					padding: 0 5rpx;
+				}
+			}
+		}
+		// 签到次数设置
+		.signin-count {
+			box-sizing: border-box;
+			padding:0 40rpx;
+			width: 100%;
+			height: 100rpx;
+			display: flex;
+			align-items: center;
+				justify-content: space-between;
+			
+			.description {
+				color: #888888;
+			}
+			.select-count {
+				display: flex;
+				
+				.radio-list__item {
+					padding-right: 10rpx;
+					font-size: 28rpx;
+				}
+			}
+		}
+		
+		// 下半部分
+		.bottom {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			margin-top: 30rpx;
+			background-color: white;
+			
+			.unit {
+				box-sizing: border-box;
+				width: 100%;
+				height: 100rpx;
+				padding-left: 40rpx;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				
+				.description {
+					color: #888888;
+				}
+				
+				.content-select {
+					display: flex;
+					justify-content: flex-end;
+					flex: 1;
+					
+					.map-navigator {
+						flex: 1;
+					}
+				}
+			}
+		}
+	}
